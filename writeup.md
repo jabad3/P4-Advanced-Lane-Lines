@@ -16,7 +16,7 @@ The goals / steps of this project are the following:
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
 [//]: # (Image References)
-[imageChess]: ./output_images/checker_undistort.png "Distorted Chessboard vs Undistorted"
+[imageChess]: ./writeup_images/checker_undistort.png "Distorted Chessboard vs Undistorted"
 [imageRoadOrig]: ./output_images/Step1a_preDistorted.jpg "Road Distorted"
 [imageRoadUndist]: ./output_images/Step1b_postDistorted.jpg "Road Undistorted"
 [imageBinaryThresh]: ./output_images/Step2_binaryThreshold.jpg "Binary Image Example"
