@@ -16,7 +16,14 @@ The goals / steps of this project are the following:
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
 [//]: # (Image References)
-[imageChess]: ./writeup_images/checker_undistort.png "Distorted Chessboard vs Undistorted"
+[CH_Explantation]: ./output_images/checker_undistort.png "Distorted Chessboard vs Undistorted"
+[PT_Explantation]: ./output_images/perspective_transform.png "Alt"
+[CO_Explantation]: ./output_images/coefficients.png "Alt"
+[AX_Explantation]: ./output_images/array_of_xs.png "Alt"
+[PL_Explantation]: ./output_images/points_on_lane.png "Alt"
+[SP_Explantation]: ./output_images/smooth_points.png "Alt"
+[RC_Explantation]: ./output_images/radius_of_curve.png "Alt"
+
 [imageRoadOrig]: ./output_images/Step1a_preDistorted.jpg "Road Distorted"
 [imageRoadUndist]: ./output_images/Step1b_postDistorted.jpg "Road Undistorted"
 [imageBinaryThresh]: ./output_images/Step2_binaryThreshold.jpg "Binary Image Example"
@@ -50,7 +57,7 @@ This is it, you're reading this point:).
 
 The code for this step is contained in the "source/calibration.py" file. We are provided a set of chessboard images to help with calibration. I start by preparing an array that holds "object points". These will be the (x, y, z) coordinates of the chessboard corners in the real world. For every chessboard image, I use the `cv2.findChessboardCorners` to detect the corners.
 I maintain two arrays, `objpoints` and `imgpoints`. `objpoints` will contain the same `objpoint` object for every time all the edges are detected in an image. `imgpoints` will contain the actual locations of the edges. I then used the `objpoints` and `imgpoints` arrays to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function. These coefficients are saved in a pickle file. I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
-![alt text][imageChess]
+![alt text][CH_Explantation]
 
 
 ###Pipeline (single images)
@@ -85,7 +92,6 @@ Now that we have a set of points that define the left and right lanes, we augmen
 ![alt text][imageFitLanes]
 ![alt text][imageFitLanesWarped]
 ![alt text][imageFinalColorLanes]
-![alt text][imageDataWrite]
 
 
 
@@ -97,7 +103,7 @@ To calculate the vehicles offset from the center of the lane: I relied on the fa
 
 To calculate the radius of the curve, I used used the left lane only to fit another polynomial. The code can be seen in: (`source/process_image.py` file, in the labeled section, approximately lines 218-236). With this polynomial, we proceed as follows:
 This is the math used to calculate the radius of the curvature:
-![alt text][image6]
+![alt text][RC_Explantation]
 
 
 
@@ -107,7 +113,7 @@ This is the math used to calculate the radius of the curvature:
 
 ####6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 The result of augmenting the calculated data onto the original image is seen here:
-![alt text][image6]
+![alt text][imageDataWrite]
 Wow, so perrty.
 
 ---
@@ -116,7 +122,8 @@ Wow, so perrty.
 
 ####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 Here's a [link to my result](./project_video.mp4)
-
+Here's a [link to my result][video1]
+Here's a [link to my result](video1)
 ---
 
 ###Discussion
