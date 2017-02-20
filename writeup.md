@@ -138,5 +138,8 @@ Here's a [link to my result][video1]
 ###Discussion
 
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+
+My pipeline is still likely to fail with complex streams or environments. This can be seen in the challenge videos. This is because the pipeline needs to be tweaked in order to provide the best results. Tweaking that occurs: the distance for how far out to detect lanes is hard-coded. This means that in scenarios where it would not be optimal to look far out into the distance, the pipeline will still do so. One approach to try and eliminate this issue would be to make this distance variable dynamic. In fact, being able to dynamically detect how wide the lane is, and far out ahead the lane is visisble would greatly improve this pipeline. Another issue is still seen with color-noise. In the challenge video, shadows still provide false-negative detections for the lanes. More tweaking with the color thresholding parameters is needed. Lastly, I think another option could be to eliminate lane tracking altogether if the system cannot stabalize it's lane detections. I would rather have the pipeline not augment the stream if it is extremely uncertain.
+
  
 
