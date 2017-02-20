@@ -16,13 +16,13 @@ The goals / steps of this project are the following:
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
 [//]: # (Image References)
-[CH_Explantation]: ./output_images/checker_undistort.png "Distorted Chessboard vs Undistorted"
-[PT_Explantation]: ./output_images/perspective_transform.png "Alt"
-[CO_Explantation]: ./output_images/coefficients.png "Alt"
-[AX_Explantation]: ./output_images/array_of_xs.png "Alt"
-[PL_Explantation]: ./output_images/points_on_lane.png "Alt"
-[SP_Explantation]: ./output_images/smooth_points.png "Alt"
-[RC_Explantation]: ./output_images/radius_of_curve.png "Alt"
+[CH_Explantation]: ./writeup_images/checker_undistort.png "Distorted Chessboard vs Undistorted"
+[PT_Explantation]: ./writeup_images/perspective_transform.png "Alt"
+[CO_Explantation]: ./writeup_images/coefficients.png "Alt"
+[AX_Explantation]: ./writeup_images/array_of_xs.png "Alt"
+[PL_Explantation]: ./writeup_images/points_on_lane.png "Alt"
+[SP_Explantation]: ./writeup_images/smooth_points.png "Alt"
+[RC_Explantation]: ./writeup_images/radius_of_curve.png "Alt"
 
 [imageRoadOrig]: ./output_images/Step1a_preDistorted.jpg "Road Distorted"
 [imageRoadUndist]: ./output_images/Step1b_postDistorted.jpg "Road Undistorted"
@@ -30,16 +30,12 @@ The goals / steps of this project are the following:
 [imageWarp]: ./output_images/Step3_perspectiveTransform.jpg "Warp Example"
 [imageBinLanes1]: ./output_images/Step4c_extractLanes.jpg "Warp Example"
 [imageBinLanes2]: ./output_images/Step4a_binaryLanes.jpg "Warp Example"
-
 [imageFitLanes]: ./output_images/Step5a_fitLanes.jpg "Warp Example"
 [imageFitLanesWarped]: ./output_images/Step5b_fittedLanes.jpg "Warp Example"
 [imageFinalColorLanes]: ./output_images/Step5c_mergedLaneImages.jpg "Warp Example"
 [imageDataWrite]: ./output_images/Step6_final.jpg "Warp Example"
 
-
-[image4]: ./output_images/Step3_perspectiveTransform.jpg "Warp Example"
-[image4]: ./output_images/Step3_perspectiveTransform.jpg "Warp Example"
-[video1]: ./project_video.mp4 "Video"
+[video1]: ./output_images/project_video_out.mp4 "Result Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
 ###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -121,9 +117,8 @@ Wow, so perrty.
 ###Pipeline (video)
 
 ####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
-Here's a [link to my result](./project_video.mp4)
 Here's a [link to my result][video1]
-Here's a [link to my result](video1)
+
 ---
 
 ###Discussion
