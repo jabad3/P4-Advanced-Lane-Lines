@@ -1,10 +1,10 @@
 from moviepy.editor import VideoFileClip
 from IPython.display import HTML
-from img_gen import process_image
+from process_image import process_image
 
 # specify input and output destinations
 input_video_path = '../test_videos/project_video.mp4'
-ouput_video_path = '../output_images/final.mp4'
+ouput_video_path = '../output_images/project_video_out.mp4'
 
 # split input video into frames, pass in the processing function
 # then merge frames and output final results

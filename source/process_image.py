@@ -99,7 +99,7 @@ def process_image(img, write_files=False):
     # approach: the tracker class is used to generate this data. see class for documentation.
 
     # define a search window. the search window is used to split the image into slices while searching.
-    window_height = 30
+    window_height = 90
     window_width = 30
     
     # instantiate a class to help generate lane points

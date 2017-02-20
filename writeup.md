@@ -72,7 +72,10 @@ I combined the outputs of the image's x-axis gradient, y-axis gradient, and then
 
 
 ####3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
-Each image input into the pipeline goes through a perspective transform. The purpose of this transformation is to take the image from its current view, and convert it to a top-down birds-eye view of the road. To complete a perspective transform on each input, I specified a set of points that would be source points, and another set for destination points. The source points would connect to define a trapezoid, and when transformed, the destination points define a rectangle. The code can be seen in: (`source/process_image.py` file, in the labeled section, approximately lines 59-70). My points are not hardcoded. Instead I hardcode some ratios.
+Each image input into the pipeline goes through a perspective transform. The purpose of this transformation is to take the image from its current view, and convert it to a top-down birds-eye view of the road. 
+![alt text][PT_Explantation]
+
+To complete a perspective transform on each input, I specified a set of points that would be source points, and another set for destination points. The source points would connect to define a trapezoid, and when transformed, the destination points define a rectangle. The code can be seen in: (`source/process_image.py` file, in the labeled section, approximately lines 59-70). My points are not hardcoded. Instead I hardcode some ratios.
 I define the bottom-width of the trapezoid to be about 80% of the original image, the height of the trapezoid is about 60% of the input image, and the top-width of the trapezoid is about 10% of the input image. I verified that my perspective transform was correct by testing that the lanes were parrallel after the transform. The results are seen below:
 ![alt text][imageWarp]
 
@@ -84,7 +87,18 @@ I am using the `find_window_centroids()` function in the `centroid_tracker` file
 ![alt text][imageBinLanes2]
 
 
-Now that we have a set of points that define the left and right lanes, we augment the input image by coloring the lanes in. Further, we calculate curvature of the lane. The code can be seen in: (`source/process_image.py` file, in the labeled section, approximately lines 151-171). I used the 'numpy.polyfit()' function to help fit the points to a second degree polynomial. This function returns the coefficients for this polynomial. I generated an array that spanned the height of the image, and combined with the polynomials, generated points that now mapped all along the height of the image and also fit the lane curvature. I did this for both lanes. Using this data, it is now possible to augment the original input with a nicely colored markup of the lanes.
+Now that we have a set of points that define the left and right lanes, we augment the input image by coloring the lanes in. Further, we calculate curvature of the lane. The code can be seen in: (`source/process_image.py` file, in the labeled section, approximately lines 151-171). I used the 'numpy.polyfit()' function to help fit the points to a second degree polynomial. This function returns the coefficients for this polynomial. 
+An example from one of the lanes: 
+![alt text][CO_Explantation]
+
+
+I generated an array that spanned the height of the image, and combined with the polynomials, generated points that now mapped all along the height of the image and also fit the lane curvature. I did this for both lanes. 
+![alt text][AX_Explantation]
+![alt text][PL_Explantation]
+![alt text][SP_Explantation]
+
+
+Using this data, it is now possible to augment the original input with a nicely colored markup of the lanes.
 ![alt text][imageFitLanes]
 ![alt text][imageFitLanesWarped]
 ![alt text][imageFinalColorLanes]
