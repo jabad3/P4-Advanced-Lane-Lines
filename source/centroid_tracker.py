@@ -1,6 +1,7 @@
 import numpy as np
 import cv2
 
+# This class is available by searching through Udacity's resources
 class centroid_tracker():
     # for every single frame in a video or stream, create this object to track lane lines
     # window width and window height are search dimensions

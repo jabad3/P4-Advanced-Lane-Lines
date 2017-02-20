@@ -3,7 +3,6 @@ import numpy as np
 import pickle
 
 
-#
 def import_calibration_data():
     dist_pickle = pickle.load(open("../camera_cal_output/calibration_data_pickle.p", "rb"))
     mtx = dist_pickle['mtx']
@@ -11,6 +10,7 @@ def import_calibration_data():
     return mtx, dist
 
 
+# This class is available by searching through Udacity's resources
 # Define a function that applies Sobel x or y, 
 # then takes an absolute value and applies a threshold.
 # Note: calling your function with orient='x', thresh_min=5, thresh_max=100
@@ -38,7 +38,7 @@ def abs_sobel_thresh(img, orient='x', thresh=(0,255)):
     return binary_output
 
 
-# 
+# This class is available by searching through Udacity's resources
 def color_threshold(image, sthresh=(0,255), vthresh=(0,255)):
     hls = cv2.cvtColor(image, cv2.COLOR_RGB2HLS)
     s_channel = hls[:,:,2]
