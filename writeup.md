@@ -93,10 +93,13 @@ An example of polyfit from one of the lanes (an array of 3 floats, each represen
 
 
 I generated an array that spanned the height of the image, and combined with the polynomials, generated points that now mapped all along the height of the image and also fit the lane curvature. I did this for both lanes.
+
 Step1: generate an array of y-values spanning the top of the image to the bottom:
 ![alt text][AX_Explantation]
+
 Step2: generate an array of xy-values spanning the lane:
 ![alt text][PL_Explantation]
+
 Step3: visualizing these generate points:
 ![alt text][SP_Explantation]
 
