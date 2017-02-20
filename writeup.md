@@ -88,13 +88,16 @@ I am using the `find_window_centroids()` function in the `centroid_tracker` file
 
 
 Now that we have a set of points that define the left and right lanes, we augment the input image by coloring the lanes in. Further, we calculate curvature of the lane. The code can be seen in: (`source/process_image.py` file, in the labeled section, approximately lines 151-171). I used the 'numpy.polyfit()' function to help fit the points to a second degree polynomial. This function returns the coefficients for this polynomial. 
-An example from one of the lanes: 
+An example of polyfit from one of the lanes (an array of 3 floats, each representing coefficients of a second degree polynomial): 
 ![alt text][CO_Explantation]
 
 
-I generated an array that spanned the height of the image, and combined with the polynomials, generated points that now mapped all along the height of the image and also fit the lane curvature. I did this for both lanes. 
+I generated an array that spanned the height of the image, and combined with the polynomials, generated points that now mapped all along the height of the image and also fit the lane curvature. I did this for both lanes.
+Step1: generate an array of y-values spanning the top of the image to the bottom:
 ![alt text][AX_Explantation]
+Step2: generate an array of xy-values spanning the lane:
 ![alt text][PL_Explantation]
+Step3: visualizing these generate points:
 ![alt text][SP_Explantation]
 
 
