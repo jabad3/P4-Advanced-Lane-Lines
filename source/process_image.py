@@ -263,5 +263,5 @@ def process_image(img, write_files=False):
     return result
 
 if __name__ == '__main__':
-    img = cv2.imread("../test_images/test5.jpg")
+    img = cv2.imread("../test_images/test2.jpg")
     res = process_image(img, write_files=True)
